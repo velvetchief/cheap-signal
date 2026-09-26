@@ -865,10 +865,7 @@ export default function SignalLab() {
         {/* Intro inside bay */}
         <div className="flex flex-col gap-4 border-b border-[var(--line)] px-5 py-6 sm:flex-row sm:items-end sm:justify-between sm:gap-10 sm:px-6">
           <div className="max-w-xl">
-            <p className="font-sans text-[11px] font-medium tracking-[0.1em] text-[var(--ink-3)]">
-              ONE SLIDER · SEEDED MODEL
-            </p>
-            <h3 className="font-display mt-3 text-[1.65rem] font-medium leading-tight tracking-tightish text-[var(--ink)] sm:text-[1.9rem]">
+            <h3 className="font-display text-[1.65rem] font-medium leading-tight tracking-tightish text-[var(--ink)] sm:text-[1.9rem]">
               One price, three numbers.
             </h3>
           </div>
