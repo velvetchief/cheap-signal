@@ -3,3 +3,8 @@ app/.next/
 cloudflared
 *.trycloudflare
 *.trycloudflare.*
+
+# Secrets. app/.gitignore covers the Next app; these cover the repo root too.
+.env
+.env.*
+*.pem
