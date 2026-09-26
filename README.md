@@ -1,11 +1,7 @@
 # Cheap Signal
 
-When signals get cheap, the people who cared leave. Instagram ran the experiment on photographers. Cosign is the control.
-
-The runnable Next.js drop lives in [`app/`](app/). See [`app/README.md`](app/README.md) for local run and production notes.
+Cheap signals fail when **cost collapses** — reciprocal, zero-stakes, unlimited. Cosign only works if cosigns stay **costly**: reputation skin in the game, not LinkedIn-endorsement theater. Scarcity is expensive commitment (hire, check, IRL invite), not “Cosign invented belief.”
 
 ```bash
-cd app
-npm install
-npm run dev
+cd app && npm i && npm run dev
 ```

@@ -1,6 +1,6 @@
 # Cheap Signal — Scoring Schema
 
-**Inspiration:** Reuse the *classification / hand-label / score* mindset from Prithvi’s Seven-Dollar Model / Jev RFP work — **not** RFP scanning. Apply that methodology to social-graph and endorsement signals.
+**Method:** Hand-label and score social-graph and endorsement signals with an inspectable schema — not a black-box essay.
 
 **Job of the schema:** Drive the interactive viz with transparent, inspectable scores. Not a black-box AI essay. Dragging **T** must visibly re-rank signals and move both stacks.
 
@@ -141,7 +141,7 @@ Public cosign is **not** the scarcest signal. IRL invite and economic commitment
 | hire_or_check | Hire / write a check / seed | economic_binding | 0.05 | 0.98 | 0.95 | What builders and capital allocators need |
 | irl_invite | Scarce IRL invite | seat_scarce | 0.08 | 0.96 | 0.9 | Seats finite; host stake — beats public cosign |
 
-*Scores are hand labels for product demonstration — not measured platform telemetry. Mark as such in UI.*
+*Scores are hand labels for the drop — not measured platform telemetry. Mark as such in the lab note.*
 
 ---
 
@@ -155,7 +155,7 @@ Public cosign is **not** the scarcest signal. IRL invite and economic commitment
 
 ---
 
-## Kill tests for the schema
+## Schema checks
 
 - If stacks do not change when T moves → broken (v1 failure mode).
 - If “quality” language returns → rename again.

@@ -31,7 +31,7 @@ This is a **documented craft-community pattern**, not a market-share death certi
 
 - **URL:** https://photokwame.substack.com/p/why-i-quit-instagram
 - **What it establishes:** Photographer reports ~1000 days without posting; left quietly; moved among Flickr / Glass (valued for *no algorithm*); started personal Discord; frames future as many smaller venues rather than one mega-platform.
-- **Useful for drop:** Emotional job; multi-venue craft residue as snapshot.
+- **Useful for drop:** multi-venue craft residue as snapshot.
 
 ### 3. Justin Tedford / Fstoppers — metrics mentality (May 30, 2025)
 
@@ -113,7 +113,7 @@ Public name-backed “belief” that **cost nothing and became reciprocal** went
 ### a16z Jobs Substack — Cosign introduction
 
 - **URL:** https://a16zjobs.substack.com/p/introducing-cosign-a-new-space-to
-- **Establishes:** Cosign as curated professional network for people/companies in the startup ecosystem; New Media product team.
+- **Establishes:** Cosign as curated professional network for people/companies in the startup ecosystem; product context for Cosign.
 
 ### Public commentary on hiring flood
 
