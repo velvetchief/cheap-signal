@@ -341,7 +341,7 @@ export default function Drop() {
               className="cs-exhibit-source"
               href="https://www.digitalcameraworld.com/tech/social-media/instagram-is-dead-for-photographers-and-tiktoks-future-is-uncertain-so-people-are-flocking-back-to-an-old-faithful-platform"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               Source ↗
             </a>
@@ -364,7 +364,7 @@ export default function Drop() {
               className="cs-exhibit-source"
               href="https://fstoppers.com/social-media/instagram-wasnt-problem-our-obsession-was-701177"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               Source ↗
             </a>
@@ -753,7 +753,7 @@ export default function Drop() {
           {SOURCES.map((s) => (
             <li key={s.label}>
               <span className="cs-date">{s.date}</span>
-              <a href={s.href} target="_blank" rel="noreferrer">
+              <a href={s.href} target="_blank" rel="noopener noreferrer">
                 {s.label}
               </a>
             </li>
