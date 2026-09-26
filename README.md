@@ -1,8 +1,8 @@
 # Cheap Signal
 
-Cosign audition drop.
+When signals get cheap, the people who cared leave. Instagram ran the experiment on photographers. Cosign is the control.
 
-The runnable Next.js drop is in [`app/`](app/). See [`app/README.md`](app/README.md) for the briefing, paths, and local run steps.
+The runnable Next.js drop lives in [`app/`](app/). See [`app/README.md`](app/README.md) for local run and production notes.
 
 ```bash
 cd app
