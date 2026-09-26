@@ -1,0 +1,502 @@
+:root {
+  --canvas: #ffffff;
+  --ink: #000000;
+  --ink-2: rgb(0 0 0 / 64%);
+  --ink-3: rgb(0 0 0 / 44%);
+  --line: rgb(0 0 0 / 10%);
+  --line-strong: rgb(0 0 0 / 18%);
+  --hover: rgb(0 0 0 / 5%);
+  --pressed: rgb(0 0 0 / 9%);
+  --fill: rgb(0 0 0 / 4%);
+  --radius: 8px;
+  --nav-height: 0px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: Inter, "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+h1,
+h2 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+/* No rules anywhere in the chrome. The masthead, the site list and the stage are
+   separated by space, which is enough on a page with three regions. */
+.masthead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px 48px;
+  padding: 40px 48px 32px;
+  min-width: 0;
+  background: var(--canvas);
+}
+
+/* The masthead is a label, not a headline — it names the page and then gets out
+   of the way of the comparison below it. It stays in the page's sans at a light
+   weight; a monospace setting made it read as a code sample rather than a title. */
+h1 {
+  font-size: 22px;
+  font-weight: 400;
+}
+
+/* Title and command stay a single left column. The bylines sit opposite as
+   type, not as a toolbar. Space is the only separator. */
+.masthead-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.byline-group {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.byline {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-2);
+  text-decoration: none;
+}
+
+.byline:hover {
+  color: var(--ink);
+}
+
+.install-cmd {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  max-width: 100%;
+  font-size: 13px;
+  color: var(--ink-3);
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+.install-cmd span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.install-cmd svg {
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.install-cmd .icon-copied {
+  display: none;
+}
+
+.install-cmd.is-copied .icon-copy {
+  display: none;
+}
+
+.install-cmd.is-copied .icon-copied {
+  display: block;
+}
+
+.install-cmd:hover {
+  color: var(--ink-2);
+}
+
+.shell {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  align-items: start;
+  min-width: 0;
+}
+
+.sites {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  align-self: start;
+  max-height: 100vh;
+  overflow: hidden;
+  padding: 24px 24px 48px 48px;
+  min-width: 0;
+  background: var(--canvas);
+}
+
+.nav-head {
+  flex: 0 0 auto;
+  margin-bottom: 16px;
+}
+
+.nav-label {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-3);
+}
+
+.sites ol {
+  list-style: none;
+  flex: 1 1 auto;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
+
+.sites li + li {
+  margin-top: 8px;
+}
+
+.sites a {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0;
+  color: var(--ink-2);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.sites a:hover {
+  color: var(--ink);
+}
+
+.sites a[aria-current="page"] {
+  color: var(--ink);
+}
+
+.stage {
+  /* No left padding: the captures start at the sidebar's edge so the page they
+     show is the leftmost thing in the column, not an inset panel. */
+  padding: 24px 48px 56px 0;
+  min-width: 0;
+}
+
+.hint {
+  margin: 0 0 24px;
+  font-size: 13px;
+  color: var(--ink-3);
+}
+
+h2 {
+  font-size: 22px;
+}
+
+.site {
+  scroll-margin-top: 24px;
+}
+
+.site + .site {
+  margin-top: 96px;
+}
+
+.site h2 {
+  margin-bottom: 24px;
+}
+
+.to-top {
+  margin: 96px 0 0;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.to-top a {
+  color: var(--ink-2);
+  text-decoration: none;
+}
+
+.to-top a:hover {
+  color: var(--ink);
+}
+
+/* Inverted from the usual segmented control: no track, and the selected segment
+   carries the fill instead of the unselected ones sitting on it. One shape is
+   filled rather than two, and on a page with no other chrome the track was the
+   only surface left. */
+.seg {
+  display: flex;
+  flex: 0 0 auto;
+  margin: 16px -4px 0;
+  padding: 2px;
+}
+
+.seg button {
+  padding: 2px 6px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--ink-2);
+  border-radius: 5px;
+}
+
+.seg button[aria-pressed="true"] {
+  background: var(--pressed);
+  color: var(--ink);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .seg button:hover:not([aria-pressed="true"]) {
+    color: rgb(0 0 0 / 72%);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .seg button {
+    transition: background-color 160ms ease, color 160ms ease;
+  }
+}
+
+.compare {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  min-width: 0;
+}
+
+figure {
+  margin: 0;
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* The captures carry their own edges — a frame around them was a second border
+   around a picture of a bordered page. */
+.frame {
+  background: var(--fill);
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.frame.pending {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.frame.pending::after {
+  content: "Not captured yet";
+  font-size: 13px;
+  color: var(--ink-3);
+}
+
+.shot {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  line-height: 0;
+  cursor: zoom-in;
+}
+
+.shot:disabled {
+  cursor: default;
+}
+
+/* A hairline on the capture itself rather than on the frame around it. Most of
+   these pages are white to the edge, so without it the screenshot dissolves into
+   the page and you cannot see where the site stops. On the frame it would box
+   the full column in mobile view, where the capture is only 390px wide. */
+.compare img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+  border: 1px solid var(--line);
+}
+
+[data-viewport="mobile"] .compare .frame {
+  background: var(--canvas);
+  display: flex;
+  justify-content: center;
+}
+
+[data-viewport="mobile"] .compare .shot {
+  width: min(390px, 100%);
+}
+
+[data-viewport="mobile"] .compare img {
+  width: 100%;
+  height: auto;
+}
+
+/* Mobile captures are 390px, so they can sit next to each other at any page
+   width and still be read — they just scale with the column. Desktop captures
+   are 1440px and only pair once each shot would not be scaled past legibility. */
+[data-viewport="mobile"] .compare {
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.lightbox {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 24px;
+  border: 0;
+  background: var(--canvas);
+  overflow: auto;
+  cursor: zoom-out;
+}
+
+.lightbox::backdrop {
+  background: var(--canvas);
+}
+
+.lightbox img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin-inline: auto;
+  border: 1px solid var(--line);
+}
+
+@media (min-width: 1600px) {
+  .compare,
+  [data-viewport="mobile"] .compare {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+}
+
+@media (max-width: 960px) {
+  .masthead,
+  .stage {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  /* Title and command stay stacked on the left. The byline wraps below. */
+  .masthead {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding-top: 24px;
+    padding-bottom: 16px;
+  }
+
+  .shell {
+    grid-template-columns: 1fr;
+  }
+
+  /* Full-bleed chip bar: the scroller reaches the viewport edges. Chips have
+     12px of horizontal padding, so the list inset is 12px less than the 24px
+     page gutter and the first label lines up with the stage. */
+  .sites {
+    padding: 8px 0 12px;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .nav-head {
+    display: none;
+  }
+
+  .seg {
+    margin: 8px 20px 0;
+  }
+
+  .sites ol {
+    display: flex;
+    flex: 0 0 auto;
+    gap: 4px;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    padding: 0 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .sites ol::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sites li {
+    flex: 0 0 auto;
+  }
+
+  .sites li + li {
+    margin-top: 0;
+  }
+
+  .sites a {
+    width: auto;
+    min-height: 40px;
+    padding: 8px 12px;
+    white-space: nowrap;
+  }
+
+  .site {
+    scroll-margin-top: calc(var(--nav-height) + 12px);
+  }
+
+  .site + .site {
+    margin-top: 72px;
+  }
+
+  .to-top {
+    margin-top: 72px;
+  }
+}
+
+@media (max-width: 960px), (hover: none) and (pointer: coarse) {
+  .hint,
+  .seg {
+    display: none;
+  }
+}
